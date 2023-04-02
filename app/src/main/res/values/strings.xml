@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Clever Farmer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Log In</string>
+    <string name="status_title">%s\'s health status update.</string>
+    <string name="score_val">Predicted</string>
+    <string name="fruity_fruit_classifier">CLEVER FARMER</string>
+    <string name="scan_crop">Scan crop</string>
+    <string name="incidences_map">Incidences map</string>
+</resources>

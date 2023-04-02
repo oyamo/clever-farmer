@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "202376430308",
+    "project_id": "cleverfarmer-33d2f",
+    "storage_bucket": "cleverfarmer-33d2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202376430308:android:6b7f832353e0403b3e22f1",
+        "android_client_info": {
+          "package_name": "com.oyasis.fruity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202376430308-rjltsujov18o2ab9vn5m93ck3hj1i21b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oyasis.fruity",
+            "certificate_hash": "4d79c919c11209ed60efcca38c2ac9b3639495b4"
+          }
+        },
+        {
+          "client_id": "202376430308-tk0cp2tu6lkgaidhr2j8p878f6fm2oab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjLClkyXZ6LOFvI08fOzyC_FT0T0eUoqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202376430308-tk0cp2tu6lkgaidhr2j8p878f6fm2oab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
