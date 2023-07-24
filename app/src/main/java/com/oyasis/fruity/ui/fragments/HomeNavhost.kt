@@ -33,7 +33,10 @@ class HomeNavhost : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // Get the NavController
-        val navHostFragment = binding.navHomeFragment
-        val navController = navHostFragment.findNavController()
+
+        val navHostFragment = childFragmentManager.findFragmentById(R.id.navHomeFragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        binding.bottomNavigation.setupWithNavController(navController)
+
     }
 }

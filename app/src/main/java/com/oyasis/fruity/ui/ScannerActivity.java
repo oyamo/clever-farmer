@@ -26,11 +26,13 @@ import android.os.Looper;
 import android.util.Log;
 import android.util.Size;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.common.util.concurrent.ListenableFuture;
+import com.oyasis.fruity.ui.fragments.InformationFragment;
 import com.oyasis.fruity.util.DarwinConverter;
 import com.oyasis.fruity.util.MikeConverter;
 import com.oyasis.fruity.R;
@@ -52,6 +54,7 @@ public class ScannerActivity extends AppCompatActivity implements ImageClassifie
 
     private TextView label, score;
     private ImageButton flashBtn, attachImageBtn;
+    private Button diagnosisBtn;
 
     private ImageClassifierHelper imageClassifierHelper;
 
@@ -67,6 +70,17 @@ public class ScannerActivity extends AppCompatActivity implements ImageClassifie
         score = findViewById(R.id.score);
         flashBtn = findViewById(R.id.flashBtn);
         attachImageBtn = findViewById(R.id.attachImage);
+        diagnosisBtn = findViewById(R.id.diagnosisBtn);
+
+
+        diagnosisBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String txt = label.getText().toString();
+                InformationFragment informationFragment = InformationFragment.newInstance(txt);
+                informationFragment.show(getSupportFragmentManager(), "DISGNOSIS");
+            }
+        });
 
         imageClassifierHelper = new ImageClassifierHelper(
                  this, this
@@ -212,20 +226,33 @@ public class ScannerActivity extends AppCompatActivity implements ImageClassifie
 
         Log.d(TAG, "SCAN MADE");
 
+        final long[] delay = {System.currentTimeMillis()};
+
         if (greatestCategory != null) {
             Category finalGreatestCategory = greatestCategory;
             runOnUiThread(()->{
                 String placeholder = getString(R.string.score_val);
                 int prob = (int) (finalGreatestCategory.getScore() * 100f);
                 if (prob > 70) {
+                    delay[0] = System.currentTimeMillis();
                     String predictedLabel = finalGreatestCategory.getLabel();
                     predictedLabel = predictedLabel.replace("_", " ");
                     label.setText(predictedLabel);
                     score.setText(String.format("%d%%", prob));
+                    diagnosisBtn.setVisibility(View.VISIBLE);
+                } else {
+                    if(System.currentTimeMillis() - delay[0] > 5000) {
+                        label.setText("Processing...");
+                        score.setText("%-");
+                        diagnosisBtn.setVisibility(View.GONE);
+                    }
                 }
             });
         }
     }
+
+
+
 
     @Override
     public void onError(@NonNull String error) {

@@ -10,7 +10,7 @@
         android:id="@+id/appLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fruity_fruit_classifier"
+        android:text="Home"
         android:textStyle="bold"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
@@ -25,22 +25,11 @@
         android:layout_height="wrap_content"
         android:text="@string/incidences_map"
         android:textSize="18sp"
-        style="@style/TextAppearance.Material3.TitleMedium"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appLabel"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/refreshBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_refresh_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintTop_toTopOf="@id/mapLabel"
-        app:layout_constraintBottom_toBottomOf="@id/mapLabel"
-        />
 
     <com.google.android.material.card.MaterialCardView
          android:layout_width="0dp"
@@ -65,15 +54,15 @@
          </androidx.constraintlayout.widget.ConstraintLayout>
      </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/btnScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:icon="@drawable/baseline_document_scanner_24"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="-36dp"
         android:contentDescription="@string/scan_crop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

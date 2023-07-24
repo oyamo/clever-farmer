@@ -167,6 +167,9 @@ public class LoadImageActivity extends AppCompatActivity implements ImageClassif
                     predictedLabel = predictedLabel.replace("_", " ");
                     label.setText(predictedLabel);
                     score.setText(String.format("%d%%", prob));
+                }else {
+                    label.setText("Processing...");
+                    score.setText("%-");
                 }
             });
         }
